@@ -1,0 +1,258 @@
+/*
+ * Style CSS
+ */
+
+/* Variables */
+html:root {
+    --duration:     0.66s;
+    --easing:       ease;
+    --primary:      #1f00ff;
+    --visited:      #3904ba;
+    --secondary:    #ffc200;
+    --white:        #f8f8f8;
+    --gray:         #dfe3e8;
+    --black:        #58595b;
+}
+
+/* Reset */
+html, body, div, header, main, footer, nav, section, article, div,
+span, ul, li, h1, h2, h3, h4, h5, h6, p, a, small {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+div.container {
+    padding: 0px 8px;
+}
+div.wrapper {
+   height: 100%;
+}
+
+
+
+/* Layout */
+.row > div {
+    display: flex;
+    flex-direction: row;
+}
+.column > div {
+    display: flex;
+    flex-direction: column;
+}
+.centered > div {
+    align-items: center;
+    justify-content: center;
+}
+.spaced > div {
+    justify-content: space-between;
+}
+.fill {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.padded > div {
+    padding: 24px;
+}
+
+/* Colors  */
+.primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+.secondary {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+.gray {
+    background-color: var(--gray);
+    color: var(--black);
+}
+.transparent {
+    background-color: transparent;
+    color: var(--white);
+}
+.opaque {
+    background-color: var(--black);
+    mix-blend-mode: multiply;
+    opacity: 0.66;
+}
+.secondary.inverted {
+    border: solid 1px var(--primary);
+}
+
+/* Typography */
+html, body {
+    color: var(--black);
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.4em;
+}
+.condensed {
+    font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
+    text-transform: uppercase;
+}
+ul, li {
+    list-style: none;
+}
+
+/* Misc. */
+img {
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+}
+div.button {
+    cursor: pointer;
+    height: 48px;
+    user-select: none;
+    width: 96px;
+}
+span.screen {
+    z-index: 1;
+}
+
+/* Hero Section */
+div.container > div > section {
+    height: 100vh;
+}
+div.container > div > section > div {
+    margin: 0px -8px;
+    padding: 48px;
+}
+div.container > div > section article {
+    font-size: 0.6em;
+}
+div.container > div > section article > div > div {
+    width: 50%;
+    padding: 0px 12px 0px 0px;
+}
+div.container > div > section article > div > div:last-child {
+    padding: 0px 0px 0px 12px;
+}
+/* Hero Section Text */
+div.container > div > section div.content h1 {
+    font-weight: 400;
+}
+div.container > div > section div.button {
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -100%);
+    top: calc(100% - 48px);
+    z-index: 99;
+}
+div.container > div > section div.button p {
+    font-size: 24px; /* temp */
+}
+
+/* Hero Section Text */
+div.container > div > section div.logo h1 {
+    font-size: 4em; /* temp */
+}
+
+/* Background */
+div.background {
+    left: 0px;
+    overflow: hidden;
+    top: 0px;
+    z-index: -1;
+}
+div.background img {
+    height: 100%;
+    transform: translateX(-50%);
+    width: auto;
+}
+
+/* Header */
+header {
+    height: 144px;
+}
+header > div {
+    margin: 0px -8px;
+    padding: 48px;
+}
+header div.button {
+    width: 48px;
+}
+
+/* Navigation Button */
+header div.button {
+    margin-right: -8px;
+}
+header div.button span {
+    background-color: var(--primary);
+    height: 6px;
+    position: absolute;
+    transition: left var(--easing) var(--duration), opacity var(--easing) var(--duration), top var(--easing) var(--duration);
+    width: 34px;
+}
+header div.button > div {
+    padding: 4px 4px 4px 6px;
+}
+header div.button > div > span:nth-child(1) {
+    top: 8px;
+}
+header div.button > div > span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+header div.button > div > span:nth-child(3) {
+    top: calc(100% - 14px);
+}
+
+/* Navigation */
+
+/* Main */
+main > div {
+    margin: 0px -8px;
+}
+main section > div {
+    padding: 48px;
+}
+main article > div > *:not(:first-child) {
+    margin-top: 48px;
+}
+main article h1 {
+    font-size: 2em;
+}
+main article ul li:not(:last-child) {
+    margin-bottom: 1.2em;
+}
+main article div.row ul {
+    font-size: 0.75em;
+}
+
+/* Pill Button */
+div.pill.button {
+    border-radius: 24px;
+    display: inline-block;
+    font-size: 0.8em;
+    text-transform: lowercase;
+    width: auto;
+}
+div.pill.button > div {
+    padding: 0px 16px;
+}
+div.pill.button h2 {
+    font-weight: 300;
+    margin-top: -2px;
+}
+
+/* Footer */
+footer > div {
+    margin: 0px -8px;
+    padding: 48px;
+}
+footer ul h6 {
+    font-weight: 300;
+}
+footer div.cell:not(:last-child),
+footer div.cell > div > *:not(:last-child) {
+    margin-bottom: 48px;
+}
+footer div.cell:last-child ul li {
+    margin-bottom: 1.66em;
+}
