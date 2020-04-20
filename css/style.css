@@ -22,6 +22,9 @@ span, ul, li, h1, h2, h3, h4, h5, h6, p, a, small {
     padding: 0px;
     position: relative;
 }
+html {
+    scroll-behavior: smooth;
+}
 div.container {
     padding: 0px 8px;
 }
@@ -47,6 +50,9 @@ div.wrapper {
 .spaced > div {
     justify-content: space-between;
 }
+.align-center > div {
+    align-items: center;
+}
 .fill {
     height: 100%;
     position: absolute;
@@ -65,9 +71,16 @@ div.wrapper {
     background-color: var(--secondary);
     color: var(--primary);
 }
+.white {
+    background-color: var(--white);
+}
 .gray {
     background-color: var(--gray);
     color: var(--black);
+}
+.black {
+    background-color: var(--black);
+    color: var(--white);
 }
 .transparent {
     background-color: transparent;
@@ -80,6 +93,10 @@ div.wrapper {
 }
 .secondary.inverted {
     border: solid 1px var(--primary);
+}
+.white.inverted {
+    border: solid 1px var(--white);
+    background: transparent;
 }
 
 /* Typography */
@@ -97,11 +114,20 @@ html, body {
 ul, li {
     list-style: none;
 }
+h1, h2, h3, h4, h5, h6, a, p {
+    line-height: initial;
+}
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: var(--visited);
+}
 
 /* Misc. */
 img {
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     width: 100%;
 }
@@ -112,7 +138,7 @@ div.button {
     width: 96px;
 }
 span.screen {
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Hero Section */
@@ -137,12 +163,12 @@ div.container > div > section article > div > div:last-child {
 div.container > div > section div.content h1 {
     font-weight: 400;
 }
-div.container > div > section div.button {
+div.container > div > section a {
     left: 50%;
     position: absolute;
     transform: translate(-50%, -100%);
     top: calc(100% - 48px);
-    z-index: 99;
+    z-index: 3;
 }
 div.container > div > section div.button p {
     font-size: 24px; /* temp */
@@ -162,8 +188,7 @@ div.background {
 }
 div.background img {
     height: 100%;
-    transform: translateX(-50%);
-    width: auto;
+    width: 100%;
 }
 
 /* Header */
@@ -208,6 +233,7 @@ header div.button > div > span:nth-child(3) {
 /* Main */
 main > div {
     margin: 0px -8px;
+    z-index: -2;
 }
 main section > div {
     padding: 48px;
@@ -246,8 +272,10 @@ footer > div {
     margin: 0px -8px;
     padding: 48px;
 }
-footer ul h6 {
+footer ul h6,
+footer ul a {
     font-weight: 300;
+    font-size: 11px;
 }
 footer div.cell:not(:last-child),
 footer div.cell > div > *:not(:last-child) {
@@ -255,4 +283,181 @@ footer div.cell > div > *:not(:last-child) {
 }
 footer div.cell:last-child ul li {
     margin-bottom: 1.66em;
+}
+
+
+/* NAV */
+nav {
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.33);
+    height: 100vh;
+    left: 100vw;
+    position: fixed;
+    top: 0px;
+    width: calc(100vw - 48px);
+    z-index: 98;
+    color: var(--primary);
+    transition: left var(--easing) var(--duration);
+}
+nav div.close.button {
+    position: absolute;
+    top: 48px;
+    left: 48px;
+    width: 32px;
+    height: 32px;
+}
+nav.active {
+    left: 48px;
+}
+nav > div {
+    padding: 48px;
+}
+nav ul > li {
+    cursor: pointer;
+}
+nav ul > li:not(:first-child) {
+    margin-top: 24px;
+}
+nav a,
+nav h2 {
+    font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
+    font-size: 51px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: initial;
+    display: inline-block;
+}
+nav a:visited {
+    color: var(--primary);
+}
+
+nav span.underline {
+    position: absolute;
+    left: 0px;
+    bottom: 2px;
+    height: 1px;
+    width: 100%;
+    background-color: var(--primary);
+}
+
+/* Contact Aside */
+aside {
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.33);
+    height: 100vh;
+    left: 100vw;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 99;
+    transition: left var(--easing) var(--duration);
+}
+aside > div {
+    padding: 48px;
+}
+
+aside.active {
+    left: 0px;
+}
+
+/*  Form  */
+form > div.header {
+    margin-bottom: 24px;
+}
+form div.field:not(:last-child),
+form div.section:not(:last-child) {
+    margin-bottom: 24px;
+}
+input, select, button, textarea {
+    -webkit-appearance: none;
+    /* -moz-appearance: none; */
+    appearance: none;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #aaaaaa;
+    width: 100%;
+    color: #bbbbbb;
+    font-size: 15px;
+    padding: 0px;
+}
+select {
+    text-indent: -2px;
+    /* color: black; */
+}
+option {
+    color: var(--black)
+}
+input::placeholder {
+    color: #aaaaaa;
+    font-size: 15px;
+}
+textarea {
+    font-family: "Montserrat", "Arial", sans-serif;
+    height: 6em;
+    resize: none;
+}
+
+input, select {
+    height: 32px;
+}
+label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    visibility: hidden;
+}
+
+aside button {
+    height: 32px;
+    border-radius: 16px;
+    text-transform: lowercase;
+    display: inline-block;
+    width: auto;
+    padding: 0px 16px 2px 16px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+aside a,
+aside a:visited {
+    color: inherit;
+    font-weight: 400;
+}
+
+form div.field span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #bbbbbb;
+}
+
+
+div.close {
+    height: 32px;
+    width: 32px;
+}
+
+form div.header {
+    font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
+    margin-bottom: 24px;
+}
+form div.header h1 {
+    text-transform: uppercase;
+    font-size: 33px;
+}
+
+img.slide {
+    opacity: 0.0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: opacity var(--easing) 1s;
+}
+img.slide.active {
+    opacity: 1.0;
 }
