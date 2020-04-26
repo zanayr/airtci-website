@@ -1,6 +1,14 @@
 /*
  * Style CSS
  */
+ @font-face {
+    font-family: 'Gilbert Webdings';
+    src: url('../resources/fonts/Gilbert_Webdings.woff2') format('woff2'),
+        url('../resources/fonts/Gilbert_Webdings.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* Variables */
 html:root {
@@ -14,6 +22,7 @@ html:root {
     --black:        #58595b;
 }
 
+
 /* Reset */
 html, body, div, header, main, footer, nav, section, article, div,
 span, ul, li, h1, h2, h3, h4, h5, h6, p, a, small {
@@ -21,8 +30,6 @@ span, ul, li, h1, h2, h3, h4, h5, h6, p, a, small {
     margin: 0px;
     padding: 0px;
     position: relative;
-}
-html {
     scroll-behavior: smooth;
 }
 div.container {
@@ -32,6 +39,17 @@ div.wrapper {
    height: 100%;
 }
 
+
+/* Padding */
+.pad > div {
+    padding: 24px;
+}
+.pad-2x > div {
+    padding: 48px;
+}
+.fit {
+    margin: 0px -8px;
+}
 
 
 /* Layout */
@@ -58,9 +76,7 @@ div.wrapper {
     position: absolute;
     width: 100%;
 }
-.padded > div {
-    padding: 24px;
-}
+
 
 /* Colors  */
 .primary {
@@ -99,45 +115,73 @@ div.wrapper {
     background: transparent;
 }
 
+
 /* Typography */
 html, body {
     color: var(--black);
     font-family: "Montserrat", "Arial", sans-serif;
     font-weight: 300;
     letter-spacing: 0.02em;
-    line-height: 1.4em;
 }
-.condensed {
+.roboto-condensed {
     font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
+    font-weight: bold;
     text-transform: uppercase;
+}
+.gilbert-webdings {
+    font-family: "Gilbert Webdings", sans-serif;
+    font-weight: normal;
+    text-transform: none;
 }
 ul, li {
     list-style: none;
 }
-h1, h2, h3, h4, h5, h6, a, p {
-    line-height: initial;
-}
 a {
     text-decoration: none;
 }
+a,
+a:hover,
 a:visited {
-    color: var(--visited);
+    color: inherit;
 }
 
-/* Misc. */
+
+/* Button */
+div.button {
+    cursor: pointer;
+    user-select: none;
+}
+div.button > div {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+/* Icon Button */
+div.icon.button {
+    height: 48px;
+    width: 48px;
+}
+/* Pill Button */
+div.pill.button {
+    border-radius: 24px;
+    height: 48px;
+}
+div.pill.button > div {
+    border-radius: 24px;
+    padding: 0px 24px;
+}
+/* Span Button */
+/* TODO: Span Button */
+
+/* Image & Backdrop */
 img {
     height: auto;
     object-fit: cover;
     object-position: center;
     width: 100%;
 }
-div.button {
-    cursor: pointer;
-    height: 48px;
-    user-select: none;
-    width: 96px;
-}
-span.screen {
+div.backdrop {
     z-index: 2;
 }
 
@@ -285,10 +329,21 @@ footer div.cell:last-child ul li {
     margin-bottom: 1.66em;
 }
 
+/* Close Button */
+nav div.close,
+aside div.close {
+    font-size: 1.5em;
+    height: 48px;
+    left: 32px;
+    position: absolute;
+    top: 32px;
+    width: 48px;
+}
 
 /* NAV */
 nav {
     box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.33);
+    font-size: 1.7em;
     height: 100vh;
     left: 100vw;
     position: fixed;
@@ -298,12 +353,9 @@ nav {
     color: var(--primary);
     transition: left var(--easing) var(--duration);
 }
-nav div.close.button {
-    position: absolute;
-    top: 48px;
-    left: 48px;
-    width: 32px;
-    height: 32px;
+nav a,
+nav p {
+    font-size: 1.7em;
 }
 nav.active {
     left: 48px;
@@ -317,15 +369,7 @@ nav ul > li {
 nav ul > li:not(:first-child) {
     margin-top: 24px;
 }
-nav a,
-nav h2 {
-    font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
-    font-size: 51px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: initial;
-    display: inline-block;
-}
+
 nav a:visited {
     color: var(--primary);
 }
@@ -447,8 +491,8 @@ form div.header {
     margin-bottom: 24px;
 }
 form div.header h1 {
-    text-transform: uppercase;
-    font-size: 33px;
+    /* text-transform: uppercase; */
+    /* font-size: 33px; */
 }
 
 img.slide {
@@ -460,4 +504,72 @@ img.slide {
 }
 img.slide.active {
     opacity: 1.0;
+}
+
+/* Tablet Screens */
+@media only screen and (min-width: 668px) {
+
+}
+
+/* Desktop Screens */
+@media only screen and (min-width: 1024px) {
+
+}
+
+/* Large Screens */
+@media only screen and (min-width: 1200px) {
+
+}
+
+/* Small Horizontal Screens */
+@media only screen and (max-height: 480px) and (max-width: 1023px) {
+    /* Navigation Aside */
+    nav {
+        font-size: 1.3em;
+        width: 50vw;
+    }
+    nav.active {
+        left: 50vw;
+    }
+    nav a,
+    nav p {
+        display: inline-block;
+        letter-spacing: initial;
+    }
+
+    /* Contact Aside Content */
+    aside {
+        font-size: 1.3em;
+    }
+    aside form {
+        font-size: 0.7em;
+        margin-top: 48px;
+    }
+    aside form > div {
+        display: flex;
+        flex-direction: row;
+    }
+    aside form div.section {
+        margin-bottom: 0px;
+        width: calc(50% - 24px);
+    } 
+    /* Form Header */
+    aside form div.header {
+        font-size: 1.5em;
+        margin-bottom: 0px;
+        position: absolute;
+        right: 0px;
+        top: -60px;
+    }
+
+    /* Close Button */
+    nav div.close,
+    aside div.close {
+        font-size: 1.5em;
+    }
+}
+
+/* Large Horizontal Screens */
+@media only screen and (max-height: 680px) and (max-width: 1023px) {
+    /* TODO: Large Horizontal Screens */
 }
