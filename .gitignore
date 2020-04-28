@@ -1,6 +1,6 @@
 # DIRECTORIES
-/images/
-/misc/
+/resources
+/misc
 
 # MISC
 .DS_Store

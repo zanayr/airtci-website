@@ -2,88 +2,102 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width initial-scale=1.0">
-        <title>AirTCI | Techical Services</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AirTCI | Technical Services</title>
         <link rel="stylesheet" href="./css/style.css">
     </head>
-    <body>
+    <body class="bg-whtie fg-black">
         <div class="container">
             <div class="wrapper">
-                <section class="column centered" id="hero">
-                    <div class="wrapper">
-                        <a href="#header">
-                            <div class="button column centered transparent webdings">
-                                <div class="wrapper">
-                                    <p>a</p>
-                                </div>
-                            </div>
-                        </a>
-                        <article class="content row">
+                <section class="hero col center fit">
+                    <div class="wrapper pad-lg">
+                        <article class="row">
                             <div class="wrapper">
-                                <div class="logo column centered transparent">
+                                <div class="header col center bg-trans fg-white">
                                     <div class="wrapper">
                                         <h1>airTCI</h1>
                                     </div>
                                 </div>
-                                <div class="content pad centered">
-                                    <div class="wrapper primary">
-                                        <h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</h1>
+                                <div class="copy bg-primary fg-white">
+                                    <div class="wrapper pad-sm">
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <div class="fill background" id="carosel">
+                        <div class="span button absolute webding bg-trans fg-white">
+                            <a class="wrapper" href="#header">
+                                <p>a</p>
+                            </a>
+                        </div>
+                        <div class="carosel bg">
                             <div class="wrapper">
-                                <span class="fill screen opaque"></span>
-                                <img class="slide active" src="./images/carosel/carosel_01.jpg" id="carosel-01">
-                                <img class="slide" src="./images/carosel/carosel_02.jpg" id="carosel-02">
-                                <img class="slide" src="./images/carosel/carosel_03.jpg" id="carosel-03">
+                                <div class="overlay"></div>
+                                <img class="slide active" src="./resources/images/placeholder_1.jpg">
+                                <img class="slide" src="./resources/images/placeholder_2.jpg">
+                                <img class="slide" src="./resources/images/placeholder_3.jpg">
+                                <img class="slide" src="./resources/images/placeholder_4.jpg">
                             </div>
                         </div>
-                        
                     </div>
                 </section>
-                <header class="row spaced" id="header">
-                    <div class="wrapper white">
-                        <div class="logo column centered">
+                <header id="header" class="row space-between fit">
+                    <div class="wrapper pad-lg bg-white fg-black">
+                        <div class="logo col center">
                             <div class="wrapper">
                                 <h1>airTCI</h1>
                             </div>
                         </div>
-                        <div class="button column" id="nav-open">
+                        <div id="nav-open" class="icon button webding bg-white fg-primary">
                             <div class="wrapper">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                                <p>=</p>
                             </div>
                         </div>
-                        <nav class="column centered condensed" id="nav">
-                            <div class="wrapper white">
-                                <div class="button close column centered webdings" id="nav-close">
+                        <nav id="nav" class="shadow bg-white fg-primary">
+                            <div class="wrapper pad-lg" data-event="nav">
+                                <div id="nav-close" class="icon button webding bg-white fg-primary absolute">
                                     <div class="wrapper">
-                                        <h3>c</h3>
+                                        <p>c</p>
                                     </div>
                                 </div>
-                                <ul>
-                                    <li class="centered nav-button"><a href="#company">Company<span class="underline primary"></span></a></li>
-                                    <li class="centered nav-button"><a href="#services">Services<span class="underline primary"></span></a></li>
-                                    <li class="centered nav-button"><a href="#clients">Clients<span class="underline primary"></span></a></li>
-                                    <li class="button centered" data-action="contact-open"><p>Contanct<span class="underline primary"></span></p></li>
-                                </ul>
+                                <div class="navigation fill">
+                                    <div class="wrapper">
+                                        <div class="button roboto bg-white fg-primary nav-link">
+                                            <a class="wrapper" href="#company">
+                                                <p>Company</p>
+                                            </a>
+                                        </div>
+                                        <div class="button roboto bg-white fg-primary nav-link">
+                                            <a class="wrapper" href="#services">
+                                                <p>Services</p>
+                                            </a>
+                                        </div>
+                                        <div class="button roboto bg-white fg-primary nav-link">
+                                            <a class="wrapper" href="#clients">
+                                                <p>Clients</p>
+                                            </a>
+                                        </div>
+                                        <div class="pill button bg-white fg-primary bd-primary contact-open">
+                                            <div class="wrapper">
+                                                <p>Contact</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </nav>
                     </div>
                 </header>
-                <aside class="column spaced" id="contact">
-                    <div class="wrapper black">
-                        <div class="button close column centered webdings" id="contact-close">
+                <aside id="contact" class="bg-black fg-white">
+                    <div class="wrapper pad-lg">
+                        <div id="contact-close" class="icon button webding bg-black fg-white absolute">
                             <div class="wrapper">
-                                <h3>c</h3>
+                                <p>c</p>
                             </div>
                         </div>
-                        <form class="spaced">
+                        <form class="fill">
                             <div class="wrapper">
-                                <div class="header condensed">
+                                <div class="header roboto absolute">
                                     <div class="wrapper">
                                         <p>Reach Out</p>
                                     </div>
@@ -91,15 +105,15 @@
                                 <div class="section">
                                     <div class="wrapper">
                                         <div class="field">
-                                            <input type="text" placeholder="Name">
+                                            <input type="text" name="name" placeholder="Name">
                                             <label>Name</label>
                                         </div>
                                         <div class="field">
-                                            <input type="text" placeholder="Email">
+                                            <input type="text" name="email" placeholder="Email">
                                             <label>Email</label>
                                         </div>
                                         <div class="field">
-                                            <input type="text" placeholder="Phone">
+                                            <input type="text" name="phone" placeholder="Phone">
                                             <label>Phone</label>
                                         </div>
                                     </div>
@@ -107,91 +121,119 @@
                                 <div class="section">
                                     <div class="wrapper">
                                         <div class="field">
-                                            <select>
+                                            <select name="service">
                                                 <option>Lorem ipsum</option>
                                                 <option>Dolor set</option>
                                                 <option>Amet, execuiter</option>
                                                 <option>This is a really long option</option>
                                             </select>
                                             <label>Service</label>
-                                            <span class="webdings">a</span>
+                                            <span class="webding icon">a</span>
                                         </div>
                                         <div class="field">
-                                            <textarea placeholder="Message"></textarea>
+                                            <textarea placeholder="Message" name="message"></textarea>
                                             <label>Name</label>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="footer row space-between absolute">
+                                    <div class="wrapper">
+                                        <button class="bg-black bd-white fg-white" type="submit">Submit</button>
+                                        <p><a href="mailto:hello@airtci.com">hello@airtci.com</a></p>
+                                    </div>
+                                </div>
                             </div>
                         </form>
-                        
-                        
                     </div>
                 </aside>
-                <main class="">
-                    <div class="wrapper white">
-                        <section class="" id="company">
-                            <div class="wrapper">
-                                <article class="">
+                <main class="fit">
+                    <div class="wrapper">
+                        <section id=company class="bg-white fg-black">
+                            <div class="wrapper pad-lg">
+                                <article>
                                     <div class="wrapper">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-                                    </div>
-                                </article>
-                            </div>
-                        </section>
-                        <section class="" id="services">
-                            <div class="wrapper">
-                                <article class="transparent">
-                                    <div class="wrapper">
-                                        <h1 class="condensed">Services</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut loareet dolore mangna aliquam erat volutpat.</p>
-                                        <ul>
-                                            <li><h3 class="condensed">Lorem ipsum</h3></li>
-                                            <li><h3 class="condensed">Consectecuer</h3></li>
-                                            <li><h3 class="condensed">Sed diam</h3></li>
-                                            <li><h3 class="condensed">Dolor st amet</h3></li>
-                                            <li><h3 class="condensed">Adipiscing elit</h3></li>
-                                            <li><h3 class="condensed">Nonummy</h3></li>
-                                        </ul>
-                                        <div class="button pill column centered primary" data-action="contact-open">
+                                        <div class="copy">
                                             <div class="wrapper">
-                                                <h2>Get a quote</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </article>
-                                <div class="fill background">
+                            </div>
+                        </section>
+                        <section id="services" class="bg-trans">
+                            <div class="wrapper pad-lg">
+                                <article class="bg-trans fg-white">
                                     <div class="wrapper">
-                                        <span class="fill screen opaque"></span>
-                                        <img src="./images/background/background_01.jpg" id="background-01">
+                                        <div class="header roboto">
+                                            <div class="wrapper">
+                                                <h1>Services</h1>
+                                            </div>
+                                        </div>
+                                        <div class="copy">
+                                            <div class="wrapper">
+                                                <p class="copy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut loareet dolore mangna aliquam erat volutpat.</p>
+                                                <ul class="roboto">
+                                                    <li><p>Lorem ipsum</p></li>
+                                                    <li><p>Consectecuer</p></li>
+                                                    <li><p>Sed diam</p></li>
+                                                    <li><p>Dolor st amet</p></li>
+                                                    <li><p>Adipiscing elit</p></li>
+                                                    <li><p>Nonummy</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <div class="wrapper">
+                                                <div class="pill button bg-primary fg-white contact-open">
+                                                    <div class="wrapper">
+                                                        <p>Get a quote</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <div class="fill bg absolute">
+                                    <div class="wrapper">
+                                        <div class="overlay"></div>
+                                        <img src="./resources/images/placeholder_5.jpg">
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="" id="clients">
-                            <div class="wrapper">
+                        <section id="services" class="bg-white">
+                            <div class="wrapper pad-lg">
                                 <article class="">
                                     <div class="wrapper">
-                                        <h1 class="condensed">Clients</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut loareet dolore mangna aliquam erat volutpat.</p>
-                                        <div class="row spaced">
+                                        <div class="header roboto">
                                             <div class="wrapper">
-                                                <ul>
-                                                    <li><h3 class="condensed">Lorem ipsum</h3></li>
-                                                    <li><h3 class="condensed">Consectecuer</h3></li>
-                                                    <li><h3 class="condensed">Sed diam</h3></li>
-                                                    <li><h3 class="condensed">Dolor st amet</h3></li>
-                                                    <li><h3 class="condensed">Adipiscing elit</h3></li>
-                                                    <li><h3 class="condensed">Nonummy</h3></li>
-                                                </ul>
-                                                <ul>
-                                                    <li><h3 class="condensed">Lorem ipsum</h3></li>
-                                                    <li><h3 class="condensed">Consectecuer</h3></li>
-                                                    <li><h3 class="condensed">Sed diam</h3></li>
-                                                    <li><h3 class="condensed">Dolor st amet</h3></li>
-                                                    <li><h3 class="condensed">Adipiscing elit</h3></li>
-                                                    <li><h3 class="condensed">Nonummy</h3></li>
-                                                </ul>
+                                                <h1>Clients</h1>
+                                            </div>
+                                        </div>
+                                        <div class="copy">
+                                            <div class="wrapper">
+                                                <p class="copy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut loareet dolore mangna aliquam erat volutpat.</p>
+                                                <div class="dynamic space-between roboto">
+                                                    <div class="wrapper">
+                                                        <ul>
+                                                            <li><p>Lorem ipsum</p></li>
+                                                            <li><p>Consectecuer</p></li>
+                                                            <li><p>Sed diam</p></li>
+                                                            <li><p>Dolor st amet</p></li>
+                                                            <li><p>Adipiscing elit</p></li>
+                                                            <li><p>Nonummy</p></li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li><p>Lorem ipsum</p></li>
+                                                            <li><p>Consectecuer</p></li>
+                                                            <li><p>Sed diam</p></li>
+                                                            <li><p>Dolor st amet</p></li>
+                                                            <li><p>Adipiscing elit</p></li>
+                                                            <li><p>Nonummy</p></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -200,9 +242,9 @@
                         </section>
                     </div>
                 </main>
-                <footer class="">
-                    <div class="wrapper dynamic secondary">
-                        <div class="cell">
+                <footer class="bg-secondary fg-primary dynamic fit">
+                    <div class="wrapper pad-lg">
+                        <div class="">
                             <div class="wrapper">
                                 <div class="logo">
                                     <div class="wrapper">
@@ -210,22 +252,22 @@
                                     </div>
                                 </div>
                                 <ul>
-                                    <li><h6>&copy;2020 AirTCI | All rights reserved.</h6></li>
-                                    <li><h6>Photography from <a href="www.pexels.com">pexels.com</a> | All free for use</h6></li>
-                                    <li><h6>Website by <a href="ryanfickenscher.com">Ryan Fickenscher</a></h6></li>
+                                    <li><p>&copy;2020 AirTCI | All rights reserved.</p></li>
+                                    <li><p>Photography from <a href="www.pexels.com">pexels.com</a> | All free for use</p></li>
+                                    <li><p>Website by <a href="ryanfickenscher.com">Ryan Fickenscher</a></p></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="cell">
+                        <div class="">
                             <div class="wrapper">
-                                <div class="button pill column centered secondary inverted" data-action="contact-open">
+                                <div class="pill button column gb-secondary fg-primary bd-primary" data-action="contact-open">
                                     <div class="wrapper">
-                                        <h2>Let's work together</h2>
+                                        <p>Let's work together</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="cell row spaced">
+                        <div class="row space-between">
                             <div class="wrapper">
                                 <ul>
                                     <li><a href="#company">Company</a></li>
@@ -233,9 +275,9 @@
                                     <li><a href="#clients">Clients</a></li>
                                 </ul>
                                 <ul>
-                                    <li><h6>123 Fake St.<br>Springfield, KY 99999</h6></li>
-                                    <li><h6><a href="mailto:hello@airtci.com">hello@airtci.com</a></h6></li>
-                                    <li><h6><a href="tel:1480000000">+1 480 000 0000</a></h6></li>
+                                    <li><p>123 Fake St.<br>Springfield, KY 99999</p></li>
+                                    <li><p><a href="mailto:hello@airtci.com">hello@airtci.com</a></p></li>
+                                    <li><p><a href="tel:1480000000">+1 480 000 0000</a></p></li>
                                 </ul>
                             </div>
                         </div>
@@ -243,6 +285,7 @@
                 </footer>
             </div>
         </div>
-        <script src="./scripts/script.js"></script>
+        <script type="text/javascript" src="./scripts/script.js"></script>
+        <script type="text/javascript" src="./scripts/carosel.js"></script>
     </body>
 </html>

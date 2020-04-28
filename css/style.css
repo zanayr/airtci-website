@@ -1,575 +1,578 @@
 /*
- * Style CSS
+ * Style.css
  */
- @font-face {
+
+
+/* FONTS --------------------------------------------------------------------- FONTS */
+@font-face {
     font-family: 'Gilbert Webdings';
     src: url('../resources/fonts/Gilbert_Webdings.woff2') format('woff2'),
         url('../resources/fonts/Gilbert_Webdings.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap');
 
 
-/* Variables */
+/* VARIABLES ------------------------------------------------------------- VARIABLES */
 html:root {
-    --duration:     0.66s;
-    --easing:       ease;
     --primary:      #1f00ff;
     --visited:      #3904ba;
     --secondary:    #ffc200;
-    --white:        #f8f8f8;
-    --gray:         #dfe3e8;
     --black:        #58595b;
+    --gray-80:      #7c7c7e;
+    --gray-60:      #9fa0a1;
+    --gray-40:      #c3c3c4;
+    --gray-20:      #dfe3e8;
+    --white:        #f8f8f8;
+    --dur-lg:       1.00s;
+    --dur-md:       0.66s;
+    --dur-sh:       0.33s;
+    --easing:       ease;
 }
 
 
-/* Reset */
-html, body, div, header, main, footer, nav, section, article, div,
-span, ul, li, h1, h2, h3, h4, h5, h6, p, a, small {
+/* RESET --------------------------------------------------------------------- RESET */
+html {
+    scroll-behavior: smooth;
+}
+html, body, div, header, main, footer,
+nav, aside, section, article, span, ul,
+li, h1, h2, h3, h4, h5, h6, p, a, small,
+input, select, option, button, textarea {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     position: relative;
-    scroll-behavior: smooth;
 }
-div.container {
+input, select, button, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: inherit;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+}
+ul {
+    list-style: none;
+}
+button {
+    cursor: pointer;
+}
+
+
+/* GLOBAL ------------------------------------------------------------------- GLOBAL */
+/* Layout */
+.container {
     padding: 0px 8px;
 }
-div.wrapper {
-   height: 100%;
+.wrapper {
+    height: 100%;
 }
-
-
+/* Layout */
+.col > .wrapper,
+.dynamic > .wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.row > .wrapper {
+    display: flex;
+    flex-direction: row;
+}
+.col.center > .wrapper,
+.row.center > .wrapper,
+.dynamic.center > .wrapper {
+    align-items: center;
+    justify-content: center;
+}
+.col.space-between > .wrapper,
+.row.space-between > .wrapper,
+.dynamic.space-between > .wrapper {
+    justify-content: space-between;
+}
+.col.align-center > .wrapper,
+.row.align-center > .wrapper,
+.dynamic.align-center > .wrapper {
+    align-items: center;
+}
+.col.align-start > .wrapper,
+.row.align-start > .wrapper,
+.dynamic.align-start > .wrapper {
+    align-items: start;
+}
 /* Padding */
-.pad > div {
+.pad-sm {
     padding: 24px;
 }
-.pad-2x > div {
+.pad-lg {
     padding: 48px;
 }
 .fit {
     margin: 0px -8px;
 }
-
-
-/* Layout */
-.row > div {
-    display: flex;
-    flex-direction: row;
-}
-.column > div {
-    display: flex;
-    flex-direction: column;
-}
-.centered > div {
-    align-items: center;
-    justify-content: center;
-}
-.spaced > div {
-    justify-content: space-between;
-}
-.align-center > div {
-    align-items: center;
-}
+/* Position */
 .fill {
     height: 100%;
-    position: absolute;
     width: 100%;
 }
-
-
-/* Colors  */
-.primary {
-    background-color: var(--primary);
-    color: var(--white);
+.absolute {
+    position: absolute;
 }
-.secondary {
-    background-color: var(--secondary);
+.fill.absolute {
+    left: 0px;
+    top: 0px;
+}
+
+
+/* COLOR --------------------------------------------------------------------- COLOR */
+/* Foreground */
+.fg-black {
+    color: var(--black);
+}
+.fg-primary {
     color: var(--primary);
 }
-.white {
+.fg-white {
+    color: var(--white);
+}
+/* Background */
+.bg-black {
+    background-color: var(--black);
+}
+.bg-primary{
+    background-color: var(--primary);
+}
+.bg-secondary {
+    background-color: var(--secondary);
+}
+.bg-trans {
+    background-color: transparent;
+}
+.bg-white {
     background-color: var(--white);
 }
-.gray {
-    background-color: var(--gray);
-    color: var(--black);
-}
-.black {
-    background-color: var(--black);
-    color: var(--white);
-}
-.transparent {
-    background-color: transparent;
-    color: var(--white);
-}
-.opaque {
-    background-color: var(--black);
-    mix-blend-mode: multiply;
-    opacity: 0.66;
-}
-.secondary.inverted {
+/* Border */
+.bd-primary {
     border: solid 1px var(--primary);
 }
-.white.inverted {
+.bd-white {
     border: solid 1px var(--white);
-    background: transparent;
 }
 
 
-/* Typography */
+/* TYPOGRAPHY ----------------------------------------------------------- TYPOGRAPHY */
 html, body {
-    color: var(--black);
     font-family: "Montserrat", "Arial", sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.02em;
+    font-size: 11px;
+    font-weight: 400;
 }
-.roboto-condensed {
+.roboto {
     font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
 }
-.gilbert-webdings {
+.webding {
     font-family: "Gilbert Webdings", sans-serif;
     font-weight: normal;
     text-transform: none;
 }
-ul, li {
-    list-style: none;
-}
-a {
-    text-decoration: none;
-}
-a,
-a:hover,
-a:visited {
+/* Inline */
+h1, h2, h3, h4, h5, h6, p, a, small {
+    background-color: inherit;
     color: inherit;
 }
-
-
-/* Button */
-div.button {
-    cursor: pointer;
-    user-select: none;
+.copy {
+    letter-spacing: 0.02em;
+    line-height: 1.4em;
 }
-div.button > div {
+/* Links */
+a, a:hover, a:active, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+a.wrapper {
+    height: 100%;
+}
+
+
+/* MISC. --------------------------------------------------------------------- MISC. */
+img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+.overlay {
+    background-color: var(--black);
+    height: 100%;
+    left: 0px;
+    mix-blend-mode: multiply;
+    opacity: 0.66;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+}
+.bg {
+    z-index: -1;
+}
+
+
+/* BUTTON ------------------------------------------------------------------- BUTTON */
+.button {
+    cursor: pointer;
+    font-size: 3.9em;
+    user-select: none;
+    z-index: 1;
+}
+.button > .wrapper,
+.button > a.wrapper {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 /* Icon Button */
-div.icon.button {
+.icon.button {
     height: 48px;
     width: 48px;
 }
 /* Pill Button */
-div.pill.button {
+.pill.button {
     border-radius: 24px;
+    display: inline-block;
     height: 48px;
+    text-transform: lowercase;
 }
-div.pill.button > div {
+.pill.button > .wrapper {
     border-radius: 24px;
     padding: 0px 24px;
 }
 /* Span Button */
-/* TODO: Span Button */
-
-/* Image & Backdrop */
-img {
-    height: auto;
-    object-fit: cover;
-    object-position: center;
+.span.button {
+    height: 48px;
     width: 100%;
 }
-div.backdrop {
-    z-index: 2;
-}
 
-/* Hero Section */
-div.container > div > section {
+
+/* HERO ----------------------------------------------------------------------- HERO */
+/* Section */
+.hero {
     height: 100vh;
 }
-div.container > div > section > div {
-    margin: 0px -8px;
-    padding: 48px;
-}
-div.container > div > section article {
-    font-size: 0.6em;
-}
-div.container > div > section article > div > div {
+/* Content */
+.hero article > .wrapper > div {
+    padding-right: 12px;
     width: 50%;
-    padding: 0px 12px 0px 0px;
 }
-div.container > div > section article > div > div:last-child {
-    padding: 0px 0px 0px 12px;
+.hero article > .wraper > div:not(:last-child) {
+    padding-left: 12px;
+    padding-right: 0px;
 }
-/* Hero Section Text */
-div.container > div > section div.content h1 {
-    font-weight: 400;
+.hero article .header {
+    font-size: 1.3em;
 }
-div.container > div > section a {
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -100%);
-    top: calc(100% - 48px);
-    z-index: 3;
+.hero article .copy  {
+    font-size: 1.1em;
 }
-div.container > div > section div.button p {
-    font-size: 24px; /* temp */
-}
-
-/* Hero Section Text */
-div.container > div > section div.logo h1 {
-    font-size: 4em; /* temp */
-}
-
-/* Background */
-div.background {
+/* Button */
+.hero .span.button {
     left: 0px;
-    overflow: hidden;
-    top: 0px;
-    z-index: -1;
+    top: calc(100vh - 48px);
 }
-div.background img {
+
+
+/* CAROSEL ----------------------------------------------------------------- CAROSEL */
+.carosel {
+    background-color: transparent;
     height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
     width: 100%;
 }
+.slide {
+    left: 0px;
+    opacity: 0.0;
+    position: absolute;
+    top: 0px;
+    transition: opacity var(--easing) var(--dur-lg);
+    z-index: -1;
+}
+.slide.active {
+    opacity: 1.0;
+    z-index: 0;
+}
+.slide.trans {
+    z-index: -1;
+}
 
-/* Header */
+
+/* HEADER ------------------------------------------------------------------- HEADER */
 header {
     height: 144px;
 }
-header > div {
-    margin: 0px -8px;
-    padding: 48px;
-}
-header div.button {
-    width: 48px;
-}
 
-/* Navigation Button */
-header div.button {
-    margin-right: -8px;
-}
-header div.button span {
-    background-color: var(--primary);
-    height: 6px;
-    position: absolute;
-    transition: left var(--easing) var(--duration), opacity var(--easing) var(--duration), top var(--easing) var(--duration);
-    width: 34px;
-}
-header div.button > div {
-    padding: 4px 4px 4px 6px;
-}
-header div.button > div > span:nth-child(1) {
-    top: 8px;
-}
-header div.button > div > span:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-header div.button > div > span:nth-child(3) {
-    top: calc(100% - 14px);
-}
 
-/* Navigation */
-
-/* Main */
-main > div {
-    margin: 0px -8px;
-    z-index: -2;
-}
-main section > div {
-    padding: 48px;
-}
-main article > div > *:not(:first-child) {
-    margin-top: 48px;
-}
-main article h1 {
-    font-size: 2em;
-}
-main article ul li:not(:last-child) {
-    margin-bottom: 1.2em;
-}
-main article div.row ul {
-    font-size: 0.75em;
-}
-
-/* Pill Button */
-div.pill.button {
-    border-radius: 24px;
-    display: inline-block;
-    font-size: 0.8em;
-    text-transform: lowercase;
-    width: auto;
-}
-div.pill.button > div {
-    padding: 0px 16px;
-}
-div.pill.button h2 {
-    font-weight: 300;
-    margin-top: -2px;
-}
-
-/* Footer */
-footer > div {
-    margin: 0px -8px;
-    padding: 48px;
-}
-footer ul h6,
-footer ul a {
-    font-weight: 300;
-    font-size: 11px;
-}
-footer div.cell:not(:last-child),
-footer div.cell > div > *:not(:last-child) {
-    margin-bottom: 48px;
-}
-footer div.cell:last-child ul li {
-    margin-bottom: 1.66em;
-}
-
-/* Close Button */
-nav div.close,
-aside div.close {
-    font-size: 1.5em;
-    height: 48px;
-    left: 32px;
-    position: absolute;
-    top: 32px;
-    width: 48px;
-}
-
-/* NAV */
+/* NAVIGATION ----------------------------------------------------------- NAVIGATION */
 nav {
     box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.33);
-    font-size: 1.7em;
     height: 100vh;
     left: 100vw;
     position: fixed;
     top: 0px;
     width: calc(100vw - 48px);
     z-index: 98;
-    color: var(--primary);
-    transition: left var(--easing) var(--duration);
-}
-nav a,
-nav p {
-    font-size: 1.7em;
+    transition: left var(--easing) var(--dur-sh);
 }
 nav.active {
     left: 48px;
 }
-nav > div {
+nav > .wrapper {
     padding: 48px;
 }
-nav ul > li {
-    cursor: pointer;
+/* Close Button */
+nav > .wrapper > .button {
+    left: 34px;
+    top: 34px;
 }
-nav ul > li:not(:first-child) {
-    margin-top: 24px;
+/* Links */
+nav .navigation > .wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+nav .navigation .button {
+    border-bottom: solid 1px var(--primary);
+}
+nav .navigation .button:not(:last-child) {
+    margin-bottom: 32px;
+}
+/* Reset the pill button to look like a simple nave button */
+nav .navigation .pill.button {
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    border-radius: 0px;
+    font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
+    font-weight: 700;
+    height: auto;
+    text-transform: uppercase;
+}
+nav .navigation .pill.button > .wrapper {
+    display: block;
+    padding: 0px;
 }
 
-nav a:visited {
-    color: var(--primary);
-}
 
-nav span.underline {
-    position: absolute;
-    left: 0px;
-    bottom: 2px;
-    height: 1px;
-    width: 100%;
-    background-color: var(--primary);
-}
-
-/* Contact Aside */
+/* CONTACT ASIDE ----------------------------------------------------- CONTACT ASIDE */
 aside {
     box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.33);
     height: 100vh;
     left: 100vw;
     position: fixed;
     top: 0px;
+    transition: left var(--easing) var(--dur-sh);
     width: 100vw;
     z-index: 99;
-    transition: left var(--easing) var(--duration);
 }
-aside > div {
-    padding: 48px;
-}
-
 aside.active {
     left: 0px;
 }
-
-/*  Form  */
-form > div.header {
-    margin-bottom: 24px;
-}
-form div.field:not(:last-child),
-form div.section:not(:last-child) {
-    margin-bottom: 24px;
-}
-input, select, button, textarea {
-    -webkit-appearance: none;
-    /* -moz-appearance: none; */
-    appearance: none;
-    border-radius: 0;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #aaaaaa;
-    width: 100%;
-    color: #bbbbbb;
-    font-size: 15px;
-    padding: 0px;
-}
-select {
-    text-indent: -2px;
-    /* color: black; */
-}
-option {
-    color: var(--black)
-}
-input::placeholder {
-    color: #aaaaaa;
-    font-size: 15px;
-}
-textarea {
-    font-family: "Montserrat", "Arial", sans-serif;
-    height: 6em;
-    resize: none;
+aside > .wrapper > .icon.button {
+    top: 34px;
+    left: 34px;
 }
 
-input, select {
-    height: 32px;
-}
-label {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: -1;
-    visibility: hidden;
-}
 
-aside button {
-    height: 32px;
-    border-radius: 16px;
-    text-transform: lowercase;
-    display: inline-block;
-    width: auto;
-    padding: 0px 16px 2px 16px;
-    font-size: 17px;
-    cursor: pointer;
-}
-
-aside a,
-aside a:visited {
-    color: inherit;
-    font-weight: 400;
-}
-
-form div.field span {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    height: 100%;
+/* FORM ----------------------------------------------------------------------- FORM */
+aside form > .wrapper {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    color: #bbbbbb;
 }
-
-
-div.close {
+/* Header */
+aside form .header {
+    font-size: 2.9em;
+    right: 0px;
+    top: -8px;
+}
+/* Field */
+aside form .section:not(:last-child),
+aside form .field:not(:last-child) {
+    margin-bottom: 32px;
+    width: 100%;
+}
+aside form .section {
+    font-size: 1.1em;
+}
+aside form .field > *:first-child {
+    border-bottom: 1px solid var(--gray-60);
+    font-size: 1.0em;
     height: 32px;
-    width: 32px;
+    width: 100%;
 }
-
-form div.header {
-    font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
-    margin-bottom: 24px;
+aside form select {
+    text-indent: -2px;
 }
-form div.header h1 {
-    /* text-transform: uppercase; */
-    /* font-size: 33px; */
+aside form option {
+    color: var(--black);
 }
-
-img.slide {
-    opacity: 0.0;
+aside form textarea {
+    height: 10em !important; /* override the above styling */
+}
+/* Label */
+label {
+    left: 0px;
     position: absolute;
     top: 0px;
+    visibility: hidden;
+    z-index: -1;
+}
+/* Select Down Icon */
+aside form .field span.icon {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+} 
+/* Footer */
+aside form .footer {
+    bottom: 0px;
+    font-size: 1.3em;
     left: 0px;
-    transition: opacity var(--easing) 1s;
+    letter-spacing: 0.02em;
+    width: 100%;
 }
-img.slide.active {
-    opacity: 1.0;
+aside form .footer > .wrapper {
+    align-items: center;
 }
-
-/* Tablet Screens */
-@media only screen and (min-width: 668px) {
-
-}
-
-/* Desktop Screens */
-@media only screen and (min-width: 1024px) {
-
+aside form .footer button {
+    border-radius: 24px;
+    font-size: 1.0em;
+    height: 48px;
+    padding: 0px 24px;
+    text-transform: lowercase;
 }
 
-/* Large Screens */
-@media only screen and (min-width: 1200px) {
 
+/* SECTIONS --------------------------------------------------------------- SECTIONS */
+main section .header {
+    font-size: 2.5em;
+}
+section article > .wrapper > div:not(:last-child) {
+    margin-bottom: 48px;
+}
+main section .copy {
+    font-size: 1.1em;
+}
+main section .copy > .wrapper > *:not(:first-child),
+main section .copy > .wrapper > div > .wrapper > ul:not(:first-child) {
+    margin-top: 48px;
+}
+main section .copy ul {
+    font-size: 1.1em;
+}
+main section .copy ul > li:not(:last-child) {
+    margin-bottom: 12px;
+}
+main section .pill.button {
+    font-size: 1.5em;
 }
 
-/* Small Horizontal Screens */
-@media only screen and (max-height: 480px) and (max-width: 1023px) {
-    /* Navigation Aside */
+
+/* FOOTER ------------------------------------------------------------------- FOOTER */
+footer .pill.button {
+    font-size: 1.5em;
+}
+footer > .wrapper > div:not(:last-child),
+footer > .wrapper > div > .wrapper > *:not(:last-child) {
+    margin-bottom: 48px;
+}
+footer > .wrapper > div:last-child ul li {
+    margin-bottom: 1.66em;
+}
+/* SCREENS ----------------------------------------------------------------- SCREENS */
+/* Horizontal */
+@media only screen and (max-height: 479px) and (max-width: 879px) {
+    /* NAVIGATION ------------------------------------------------------- NAVIGATION */
     nav {
-        font-size: 1.3em;
         width: 50vw;
     }
     nav.active {
         left: 50vw;
     }
-    nav a,
-    nav p {
-        display: inline-block;
-        letter-spacing: initial;
+    /* Buttons */
+    nav .navigation .button {
+        font-size: 2.5em;
+    }
+    nav .navigation .button:not(:last-child) {
+        margin-bottom: 16px;
+    }
+    /* The pill button rules must be duplicated in this size because a screen may
+       be < 1024px and still be horizontal */
+    nav .navigation .pill.button {
+        border: none;
+        border-bottom: 1px solid var(--primary);
+        border-radius: 0px;
+        font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
+        font-weight: 700;
+        height: auto;
+        text-transform: uppercase;
+    }
+    nav .navigation .pill.button > .wrapper {
+        display: block;
+        padding: 0px;
     }
 
-    /* Contact Aside Content */
-    aside {
-        font-size: 1.3em;
-    }
-    aside form {
-        font-size: 0.7em;
-        margin-top: 48px;
-    }
-    aside form > div {
-        display: flex;
+
+    /* FORM ----------------------------------------------------------------------- FORM */
+    aside form > .wrapper {
         flex-direction: row;
     }
-    aside form div.section {
+    /* Field */
+    aside form .section {
         margin-bottom: 0px;
-        width: calc(50% - 24px);
-    } 
-    /* Form Header */
-    aside form div.header {
-        font-size: 1.5em;
-        margin-bottom: 0px;
-        position: absolute;
-        right: 0px;
-        top: -60px;
+        margin-right: 24px;
     }
-
-    /* Close Button */
-    nav div.close,
-    aside div.close {
-        font-size: 1.5em;
+    aside form .section:not(:last-child) {
+        margin: 0px 0px 0px 24px;
+    }
+    aside form .field:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    aside form textarea {
+        height: 7.3em !important; /* override the above styling */
+    }
+    /* Footer */
+    aside form .footer {
+        font-size: 1.1em;
+    }
+    aside form .footer button {
+        border-radius: 16px;
+        height: 32px;
+        padding: 0px 16px;
     }
 }
-
-/* Large Horizontal Screens */
-@media only screen and (max-height: 680px) and (max-width: 1023px) {
-    /* TODO: Large Horizontal Screens */
+/* Tablet */
+@media only screen and (min-width: 668px) {
+    
+}
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+    
+}
+/* Large */
+@media only screen and (min-width: 1200px) {
+    
 }
