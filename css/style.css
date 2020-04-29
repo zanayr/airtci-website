@@ -492,16 +492,32 @@ main section .pill.button {
 
 
 /* FOOTER ------------------------------------------------------------------- FOOTER */
-footer .pill.button {
-    font-size: 1.5em;
-}
-footer > .wrapper > div:not(:last-child),
-footer > .wrapper > div > .wrapper > *:not(:last-child) {
+
+footer .left {
     margin-bottom: 48px;
 }
-footer > .wrapper > div:last-child ul li {
+footer .left .logo {
+    margin-bottom: 48px;
+}
+footer .left ul > li:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+footer .right {
+    margin-top: 96px;
+}
+footer .pill.button {
+    font-size: 1.5em;
+    position: absolute;
+    top: -96px;
+}
+footer .right ul:not(:last-child) {
+    margin-bottom: 48px
+}
+footer .right ul > li:not(:last-child) {
     margin-bottom: 1.66em;
 }
+
+
 /* SCREENS ----------------------------------------------------------------- SCREENS */
 /* Horizontal */
 @media only screen and (max-height: 479px) and (max-width: 879px) {
@@ -542,17 +558,19 @@ footer > .wrapper > div:last-child ul li {
     }
     /* Field */
     aside form .section {
-        margin-bottom: 0px;
+        margin-bottom: 0px !important; /* override */
         margin-right: 24px;
     }
-    aside form .section:not(:last-child) {
-        margin: 0px 0px 0px 24px;
+    aside form > .wrapper > div:nth-child(3) {
+        margin-left: 24px;
+        margin-right: 0px;
     }
+
     aside form .field:not(:last-child) {
         margin-bottom: 24px;
     }
     aside form textarea {
-        height: 7.3em !important; /* override the above styling */
+        height: 7.3em !important; /* override */
     }
     /* Footer */
     aside form .footer {
@@ -562,6 +580,38 @@ footer > .wrapper > div:last-child ul li {
         border-radius: 16px;
         height: 32px;
         padding: 0px 16px;
+    }
+
+
+    /* SECTIONS --------------------------------------------------------------- SECTIONS */
+    .dynamic > .wrapper  {
+        flex-direction: row;
+    }
+    main section .copy .dynamic > .wrapper {
+        justify-content: flex-start !important;
+    }
+    main section .copy > .wrapper > div > .wrapper > ul:not(:first-child) {
+        margin-left: 48px;
+        margin-top: 0px;
+    }
+
+
+    /* FOOTER ------------------------------------------------------------------- FOOTER */
+    footer .right {
+        margin-top: 0px;
+    }
+    footer .pill.button {
+        border-radius: 16px;
+        font-size: 1.1em;
+        height: 32px;
+        top: 0px;
+        left: calc(-100% - 76px); 
+    }
+    footer .pill.button > .wrapper {
+        padding: 0px 16px;
+    }
+    footer .right ul:not(:last-child) {
+        margin-bottom: 48px;
     }
 }
 /* Tablet */
