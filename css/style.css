@@ -33,9 +33,6 @@ html:root {
 
 
 /* RESET --------------------------------------------------------------------- RESET */
-html {
-    scroll-behavior: smooth;
-}
 html, body, div, header, main, footer,
 nav, aside, section, article, span, ul,
 li, h1, h2, h3, h4, h5, h6, p, a, small,
@@ -45,7 +42,7 @@ input, select, option, button, textarea {
     padding: 0px;
     position: relative;
 }
-input, select, button, textarea {
+input, select, option, button, textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -56,74 +53,96 @@ input, select, button, textarea {
     font-family: inherit;
     letter-spacing: 0.04em;
 }
-ul {
-    list-style: none;
+
+
+/* GLOBAL ------------------------------------------------------------------- GLOBAL */
+/* Layout */
+html {
+    scroll-behavior: smooth;
 }
+body {
+    overflow-x: hidden;
+    padding: 0px 48px;
+}
+body.lock {
+    overflow-y: hidden;
+}
+.column, .dynamic-md, .dynamic-lg {
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+/* Justification */
+.center {
+    align-items: center;
+    justify-content: center;
+}
+/* Position */
+.absolute {
+    left: 0px;
+    position: absolute;
+    top: 0px;
+}
+/* Background */
+.background {
+    z-index: -1;
+}
+
+
+/* BUTTON ------------------------------------------------------------------- BUTTON */
+.button {
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+}
+/* Icon Button */
+.icon.button {
+    font-size: 33pt;
+    height: 48px;
+    width: 48px;
+}
+/* Pill Button */
+.pill.button {
+    border-radius: 16px;
+    display: inline-block;
+    font-size: 11pt;
+    height: 32px;
+    padding: 6px 16px 0px 16px;
+    text-transform: lowercase;
+}
+/* Span Button */
+.span.button {
+    font-size: 33pt;
+    height: 48px;
+    width: 100%;
+}
+/* Form Button */
 button {
     cursor: pointer;
 }
 
 
-/* GLOBAL ------------------------------------------------------------------- GLOBAL */
-/* Layout */
-.container {
-    padding: 0px 8px;
-}
-.wrapper {
+/* MISC. --------------------------------------------------------------------- MISC. */
+div.overlay {
+    background-color: var(--black);
     height: 100%;
-}
-/* Layout */
-.col > .wrapper,
-.dynamic > .wrapper {
-    display: flex;
-    flex-direction: column;
-}
-.row > .wrapper {
-    display: flex;
-    flex-direction: row;
-}
-.col.center > .wrapper,
-.row.center > .wrapper,
-.dynamic.center > .wrapper {
-    align-items: center;
-    justify-content: center;
-}
-.col.space-between > .wrapper,
-.row.space-between > .wrapper,
-.dynamic.space-between > .wrapper {
-    justify-content: space-between;
-}
-.col.align-center > .wrapper,
-.row.align-center > .wrapper,
-.dynamic.align-center > .wrapper {
-    align-items: center;
-}
-.col.align-start > .wrapper,
-.row.align-start > .wrapper,
-.dynamic.align-start > .wrapper {
-    align-items: start;
-}
-/* Padding */
-.pad-sm {
-    padding: 24px;
-}
-.pad-lg {
-    padding: 48px;
-}
-.fit {
-    margin: 0px -8px;
-}
-/* Position */
-.fill {
-    height: 100%;
-    width: 100%;
-}
-.absolute {
-    position: absolute;
-}
-.fill.absolute {
     left: 0px;
+    mix-blend-mode: multiply;
+    opacity: 0.66;
+    position: absolute;
     top: 0px;
+    width: 100%;
+    z-index: 1;
+}
+img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
 }
 
 
@@ -166,214 +185,127 @@ button {
 /* TYPOGRAPHY ----------------------------------------------------------- TYPOGRAPHY */
 html, body {
     font-family: "Montserrat", "Arial", sans-serif;
-    font-size: 11px;
     font-weight: 400;
 }
 .roboto {
     font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
     font-weight: 700;
-    text-transform: uppercase;
 }
 .webding {
     font-family: "Gilbert Webdings", sans-serif;
     font-weight: normal;
-    text-transform: none;
 }
 /* Inline */
-h1, h2, h3, h4, h5, h6, p, a, small {
+h1, h2, h3, h4, h5, h6, p, small,
+a, a:hover, a:active, a:visited {
     background-color: inherit;
     color: inherit;
 }
+/* Lists */
+ul {
+    list-style: none;
+}
+/* Font Sizes */
 .copy {
     letter-spacing: 0.02em;
     line-height: 1.4em;
-}
-/* Links */
-a, a:hover, a:active, a:visited {
-    color: inherit;
-    text-decoration: none;
-}
-a.wrapper {
-    height: 100%;
-}
-
-
-/* MISC. --------------------------------------------------------------------- MISC. */
-img {
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    width: 100%;
-}
-.overlay {
-    background-color: var(--black);
-    height: 100%;
-    left: 0px;
-    mix-blend-mode: multiply;
-    opacity: 0.66;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    z-index: 1;
-}
-.bg {
-    z-index: -1;
-}
-
-
-/* BUTTON ------------------------------------------------------------------- BUTTON */
-.button {
-    cursor: pointer;
-    font-size: 3.9em;
-    user-select: none;
-    z-index: 1;
-}
-.button > .wrapper,
-.button > a.wrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-/* Icon Button */
-.icon.button {
-    height: 48px;
-    width: 48px;
-}
-/* Pill Button */
-.pill.button {
-    border-radius: 24px;
-    display: inline-block;
-    height: 48px;
-    text-transform: lowercase;
-}
-.pill.button > .wrapper {
-    border-radius: 24px;
-    padding: 0px 24px;
-}
-/* Span Button */
-.span.button {
-    height: 48px;
-    width: 100%;
-}
-
-
-/* HERO ----------------------------------------------------------------------- HERO */
-/* Section */
-.hero {
-    height: 100vh;
-}
-/* Content */
-.hero article > .wrapper > div {
-    padding-right: 12px;
-    width: 50%;
-}
-.hero article > .wraper > div:not(:last-child) {
-    padding-left: 12px;
-    padding-right: 0px;
-}
-.hero article .header {
-    font-size: 1.3em;
-}
-.hero article .copy  {
-    font-size: 1.1em;
-}
-/* Button */
-.hero .span.button {
-    left: 0px;
-    top: calc(100vh - 48px);
-}
-
-
-/* CAROSEL ----------------------------------------------------------------- CAROSEL */
-.carosel {
-    background-color: transparent;
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-}
-.slide {
-    left: 0px;
-    opacity: 0.0;
-    position: absolute;
-    top: 0px;
-    transition: opacity var(--easing) var(--dur-lg);
-    z-index: -1;
-}
-.slide.active {
-    opacity: 1.0;
-    z-index: 0;
-}
-.slide.trans {
-    z-index: -1;
 }
 
 
 /* HEADER ------------------------------------------------------------------- HEADER */
 header {
-    height: 144px;
+    margin: 0px -48px
+}
+/* Hero */
+header > div.hero {
+    align-items: center;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 48px;
+}
+header > div.hero > h1 {
+    font-size: 33pt;
+    width: calc(50% - 12px);
+    z-index: 2;
+}
+header > div.hero > .copy {
+    font-size: 9pt;
+    padding: 24px;
+    width: calc(50% - 12px);
+    z-index: 2;
+}
+/* Jump Button */
+header > div.hero > .span.button {
+    text-decoration: none;
+    top: calc(100% - 80px);
+    z-index: 2;
+}
+
+
+/* CAROSEL ----------------------------------------------------------------- CAROSEL */
+img.slide {
+    opacity: 0.0;
+    transition: opacity var(--easing) var(--dur-lg);
+}
+img.slide.active {
+    opacity: 1.0;
+    z-index: 0;
 }
 
 
 /* NAVIGATION ----------------------------------------------------------- NAVIGATION */
-nav {
-    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.33);
-    height: 100vh;
-    left: 100vw;
-    position: fixed;
-    top: 0px;
-    width: calc(100vw - 48px);
-    z-index: 98;
-    transition: left var(--easing) var(--dur-sh);
-}
-nav.active {
-    left: 48px;
-}
-nav > .wrapper {
+header > div.navigation {
+    align-items: center;
+    height: 144px;
+    justify-content: space-between;
     padding: 48px;
 }
-/* Close Button */
-nav > .wrapper > .button {
+/* Open Navigation Button */
+header > div.navigation > .icon.button {
+    transform: translateX(12px);
+}
+/* Navigation Aside */
+nav {
+    box-shadow: none;
+    height: 100vh;
+    justify-content: center;
+    left: 100vw;
+    padding: 48px;
+    position: fixed;
+    top: 0px;
+    transition: left var(--easing) var(--dur-sh);
+    width: calc(100vw - 48px);
+    z-index: 98;
+}
+nav.active {
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.33);
+    left: 48px;
+}
+/* Close Navigation Button */
+nav > .icon.button {
     left: 34px;
     top: 34px;
 }
-/* Links */
-nav .navigation > .wrapper {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-nav .navigation .button {
-    border-bottom: solid 1px var(--primary);
-}
-nav .navigation .button:not(:last-child) {
-    margin-bottom: 32px;
-}
-/* Reset the pill button to look like a simple nave button */
-nav .navigation .pill.button {
-    border: none;
-    border-bottom: 1px solid var(--primary);
-    border-radius: 0px;
-    font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
-    font-weight: 700;
-    height: auto;
+/* Navigation Links */
+nav > ul > li.button {
+    font-size: 33pt;
+    text-align: left;
     text-transform: uppercase;
 }
-nav .navigation .pill.button > .wrapper {
-    display: block;
-    padding: 0px;
+nav > ul > li:not(:last-child) {
+    margin-bottom: 24px;
+}
+nav > ul > li.button > a {
+    border-bottom: solid 1px var(--primary);
+    text-decoration: none;
 }
 
 
 /* CONTACT ASIDE ----------------------------------------------------- CONTACT ASIDE */
 aside {
-    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.33);
     height: 100vh;
     left: 100vw;
+    padding: 48px;
     position: fixed;
     top: 0px;
     transition: left var(--easing) var(--dur-sh);
@@ -381,61 +313,63 @@ aside {
     z-index: 99;
 }
 aside.active {
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.33);
     left: 0px;
 }
-aside > .wrapper > .icon.button {
-    top: 34px;
+/* Close Contact Button */
+aside > .icon.button {
     left: 34px;
+    top: 34px;
 }
 
-
-/* FORM ----------------------------------------------------------------------- FORM */
-aside form > .wrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* CONTACT FORM ------------------------------------------------------- CONTACT FORM */
+aside form {
+    height: 100%;
 }
 /* Header */
-aside form .header {
-    font-size: 2.9em;
-    right: 0px;
-    top: -8px;
+aside form > h2.absolute {
+    font-size: 23pt;
+    left: auto;
+    right: 48px;
+    text-transform: uppercase;
+    top: 43px;
 }
-/* Field */
-aside form .section:not(:last-child),
-aside form .field:not(:last-child) {
+/* Column */
+aside form > div:not(:last-child) {
     margin-bottom: 32px;
     width: 100%;
 }
-aside form .section {
-    font-size: 1.1em;
+/* Field */
+aside form > div > div.field:not(:last-child) {
+    margin-bottom: 32px;
 }
-aside form .field > *:first-child {
-    border-bottom: 1px solid var(--gray-60);
-    font-size: 1.0em;
-    height: 32px;
+aside form > div > div > *:first-child {
+    border-bottom: solid 1px var(--gray-60);
+    font-size: 11pt;
+    letter-spacing: 0.04em;
     width: 100%;
 }
+aside form input {
+    height: 32px;
+}
 aside form select {
+    height: 32px;
     text-indent: -2px;
 }
 aside form option {
-    color: var(--black);
+    color: #000000;
 }
 aside form textarea {
-    height: 10em !important; /* override the above styling */
+    height: 10em;
+    resize: none;
 }
 /* Label */
-label {
-    left: 0px;
-    position: absolute;
-    top: 0px;
+aside form label {
     visibility: hidden;
     z-index: -1;
 }
 /* Select Down Icon */
-aside form .field span.icon {
+aside form span.glyph {
     align-items: center;
     color: inherit;
     display: flex;
@@ -447,182 +381,387 @@ aside form .field span.icon {
     top: 0px;
 } 
 /* Footer */
-aside form .footer {
-    bottom: 0px;
-    font-size: 1.3em;
-    left: 0px;
-    letter-spacing: 0.02em;
-    width: 100%;
+aside form button.pill.button {
+    left: 48px;
+    padding-top: 0px;
+    top: calc(100% - 72px);
 }
-aside form .footer > .wrapper {
-    align-items: center;
-}
-aside form .footer button {
-    border-radius: 24px;
-    font-size: 1.0em;
-    height: 48px;
-    padding: 0px 24px;
-    text-transform: lowercase;
+aside form a.absolute {
+    bottom: 32px;
+    font-size: 9pt;
+    left: auto;
+    padding-bottom: 15px;
+    right: 48px;
+    top: auto;
 }
 
 
-/* SECTIONS --------------------------------------------------------------- SECTIONS */
-main section .header {
-    font-size: 2.5em;
+/* MAIN ----------------------------------------------------------------------- MAIN */
+main {
+    margin: 0px -48px;
 }
-section article > .wrapper > div:not(:last-child) {
-    margin-bottom: 48px;
+
+
+/* SECTION ----------------------------------------------------------------- SECTION */
+section > article {
+    padding: 48px;
+    z-index: 2;
 }
-main section .copy {
-    font-size: 1.1em;
+section h1 {
+    font-size: 33pt;
+    font-weight: 700;
+    text-transform: uppercase;
 }
-main section .copy > .wrapper > *:not(:first-child),
-main section .copy > .wrapper > div > .wrapper > ul:not(:first-child) {
-    margin-top: 48px;
+section .copy {
+    font-size: 9pt;
 }
-main section .copy ul {
-    font-size: 1.1em;
+section > article > .pill.button {
+    font-size: 11pt;
 }
-main section .copy ul > li:not(:last-child) {
+section ul > li {
+    font-size: 17pt;
+    text-transform: uppercase;
+}
+section ul:not(:last-child),
+section ul > li:not(:last-child),
+section > article > div.row > div > ul:not(:last-child) {
     margin-bottom: 12px;
 }
-main section .pill.button {
-    font-size: 1.5em;
+section > article > *:not(:last-child) {
+    margin-bottom: 48px;
+}
+section > article > p:not(:first-of-type) {
+    margin-top: -24px;
+}
+section > article > div.row ul > li {
+    font-size: 11pt;
+}
+section > article > div.row ul:not(:last-child) {
+    margin-bottom: 0px;
+    margin-right: 48px;
 }
 
 
 /* FOOTER ------------------------------------------------------------------- FOOTER */
-
-footer .left {
-    margin-bottom: 48px;
+footer {
+    margin: 0px -48px;
+    padding-bottom: 96px;
 }
-footer .left .logo {
-    margin-bottom: 48px;
+/* Content */
+/* Left Side */
+footer > div:first-child {
+    padding: 48px 48px 72px 48px;
 }
-footer .left ul > li:not(:last-child) {
-    margin-bottom: 0.5em;
+footer > div:first-child > h6 {
+    font-size: 11pt;
+    margin-bottom: 6px;
 }
-footer .right {
-    margin-top: 96px;
+footer > div:first-child p {
+    font-size: 7pt;
+    letter-spacing: 0.02em;
 }
-footer .pill.button {
-    font-size: 1.5em;
+footer > div:first-child > p:not(:last-child) {
+    margin-bottom: 6px;
+}
+/* Right Side */
+footer > div:last-child {
+    justify-content: space-between;
+    padding: 72px 48px 0px 48px;
+}
+footer > div:last-child > .pill.button {
+    font-size: 11pt;
+    left: 48px;
     position: absolute;
-    top: -96px;
+    top: -24px;
 }
-footer .right ul:not(:last-child) {
-    margin-bottom: 48px
+footer > div:last-child > ul > li {
+    font-size: 7pt;
 }
-footer .right ul > li:not(:last-child) {
-    margin-bottom: 1.66em;
+footer > div:last-child > ul > li:not(:last-child) {
+    margin-bottom: 24px;
 }
 
 
 /* SCREENS ----------------------------------------------------------------- SCREENS */
 /* Horizontal */
 @media only screen and (max-height: 479px) and (max-width: 879px) {
-    /* NAVIGATION ------------------------------------------------------- NAVIGATION */
-    nav {
-        width: 50vw;
-    }
-    nav.active {
-        left: 50vw;
-    }
-    /* Buttons */
-    nav .navigation .button {
-        font-size: 2.5em;
-    }
-    nav .navigation .button:not(:last-child) {
-        margin-bottom: 16px;
-    }
-    /* The pill button rules must be duplicated in this size because a screen may
-       be < 1024px and still be horizontal */
-    nav .navigation .pill.button {
-        border: none;
-        border-bottom: 1px solid var(--primary);
-        border-radius: 0px;
-        font-family: "Roboto Condensed", "Arial Condensed", sans-serif;
-        font-weight: 700;
-        height: auto;
-        text-transform: uppercase;
-    }
-    nav .navigation .pill.button > .wrapper {
-        display: block;
-        padding: 0px;
+    /* HEADER --------------------------------------------------------------- HEADER */
+    header > div.hero > .copy {
+        font-size: 9pt !important;
+        font-weight: 400 !important;
+        padding: 24px !important;
+        width: calc(50% - 12px) !important;
     }
 
 
-    /* FORM ----------------------------------------------------------------------- FORM */
-    aside form > .wrapper {
-        flex-direction: row;
+    /* CONTACT ASIDE ------------------------------------------------- CONTACT ASIDE */
+    aside {
+        width: 100vw !important;
+    }
+    aside.active {
+        left: 0px !important;
+    }
+    /* Column */
+    aside form {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+    aside form > div:not(:last-child) {
+        margin-bottom: 0px !important;
+        width: calc(50% - 24px) !important;
     }
     /* Field */
-    aside form .section {
-        margin-bottom: 0px !important; /* override */
-        margin-right: 24px;
-    }
-    aside form > .wrapper > div:nth-child(3) {
-        margin-left: 24px;
-        margin-right: 0px;
-    }
-
-    aside form .field:not(:last-child) {
-        margin-bottom: 24px;
-    }
     aside form textarea {
-        height: 7.3em !important; /* override */
-    }
-    /* Footer */
-    aside form .footer {
-        font-size: 1.1em;
-    }
-    aside form .footer button {
-        border-radius: 16px;
-        height: 32px;
-        padding: 0px 16px;
-    }
-
-
-    /* SECTIONS --------------------------------------------------------------- SECTIONS */
-    .dynamic > .wrapper  {
-        flex-direction: row;
-    }
-    main section .copy .dynamic > .wrapper {
-        justify-content: flex-start !important;
-    }
-    main section .copy > .wrapper > div > .wrapper > ul:not(:first-child) {
-        margin-left: 48px;
-        margin-top: 0px;
-    }
-
-
-    /* FOOTER ------------------------------------------------------------------- FOOTER */
-    footer .right {
-        margin-top: 0px;
-    }
-    footer .pill.button {
-        border-radius: 16px;
-        font-size: 1.1em;
-        height: 32px;
-        top: 0px;
-        left: calc(-100% - 76px); 
-    }
-    footer .pill.button > .wrapper {
-        padding: 0px 16px;
-    }
-    footer .right ul:not(:last-child) {
-        margin-bottom: 48px;
+        height: 6.6em !important
     }
 }
 /* Tablet */
 @media only screen and (min-width: 668px) {
+    /* GLOBAL --------------------------------------------------------------- GLOBAL */
+    /* Layout */
+    .dynamic-md {
+        flex-direction: row;
+    }
+
+
+    /* HEADER --------------------------------------------------------------- HEADER */
+    header > div.hero > h1 {
+        width: calc(50% - 24px);
+    }
+    header > div.hero > .copy {
+        font-size: 23pt;
+        font-weight: 600;
+        padding: 48px;
+        width: calc(50% - 24px);
+    }
+
+
+    /* NAVIGATION ------------------------------------------------------- NAVIGATION */
+    /* Open Navigation Button */
+    header > div.navigation > .icon.button {
+        display: none;
+        visibility: hidden;
+    }
+    /* Navigation Aside */
+    nav {
+        height: auto;
+        left: auto;
+        padding: 0px;
+        position: relative;
+        top: auto;
+        width: auto;
+        z-index: initial;
+    }
+    /* Close Navigation Button */
+    nav > .icon.button {
+        display: none;
+        visibility: hidden;
+    }
+    /* Navigation Links */
+    nav > ul > li.button {
+        display: inline-block;
+        font-size: 11pt;
+        font-weight: 400;
+        text-transform: lowercase;
+    }
+    nav > ul > li:not(:last-child) {
+        margin-bottom: 0px;
+        margin-right: 24px;
+    }
+    nav > ul > li.button > a {
+        border-bottom: none;
+        display: block;
+        height: 32px;
+        padding-top: 6px;
+    }
+    /* Contact Button */
+    nav > ul > li.button:last-child {
+        background-color: var(--secondary);
+        border-radius: 16px;
+        color: var(--primary);
+        font-family: "Montserrat", "Arial", sans-serif;
+        padding: 0px 16px;
+    }
     
+
+
+    /* CONTACT ASIDE ------------------------------------------------- CONTACT ASIDE */
+    aside {
+        width: 50vw;
+    }
+    aside.active {
+        left: 50vw;
+    }
+    /* Column */
+    aside form {
+        flex-direction: column;
+        justify-content: center;
+    }
+    aside form > div:not(:last-child) {
+        margin-bottom: 24px;
+        width: 100%;
+    }
+    /* Field */
+    aside form textarea {
+        height: 10em;
+    }
+      
+
+
+    /* SECTION ------------------------------------------------------------- SECTION */
+    section .copy {
+        font-size: 11pt;
+        width: calc(66% - 24px);
+    }
+
+
+    /* FOOTER --------------------------------------------------------------- FOOTER */
+    footer {
+        justify-content: space-between;
+    }
+    /* Content */
+    /* Left Side */
+    footer > div:first-child {
+        padding: 48px 24px 0px 48px;
+    }
+    footer > div:first-child > h6 {
+        font-size: 13pt;
+        margin-bottom: 20px;
+        padding-top: 4px;
+    }
+    footer > div:first-child p:not(:last-child) {
+        margin-bottom: 0px;
+    }
+    /* Right Side */
+    footer > div:last-child {
+        padding: 48px 48px 0px 24px;
+    }
+    footer > div:last-child > .pill.button {
+        left: -24px;
+        top: 48px;
+        transform: translateX(-100%);
+    }
+    footer > div:last-child > ul:not(:last-child) {
+        margin-right: 48px;
+    }
+    footer > div:last-child > ul > li {
+        font-size: 9pt;
+    }
+    footer > div:last-child > ul > li:not(:last-child) {
+        margin-bottom: 9px;
+    }
 }
 /* Desktop */
-@media only screen and (min-width: 1024px) {
-    
+@media only screen and (min-width: 1000px) {
+    /* GLOBAL --------------------------------------------------------------- GLOBAL */
+    /* Layout */
+    .dynamic-lg {
+        flex-direction: row;
+    }
+
+
+    /* NAVIGATION ------------------------------------------------------- NAVIGATION */
+    /* Navigation Links */
+    nav > ul > li.button {
+        font-size: 13pt;
+    }
+    nav > ul > li.button:not(:last-child) > a {
+        padding-top: 4px;
+    }
+    /* Contact Button */
+    nav > ul > li.button:last-child {
+        font-size: 11pt !important;
+    }
+
+
+    /* SECTION ------------------------------------------------------------- SECTION */
+    section ul:not(:last-child) {
+        margin-bottom: 0px;
+        margin-right: 48px;
+    }
+    section > article > div.row > div:not(:last-child) {
+        margin-right: 48px;
+    }
+    section > article > div.row > div > ul:not(:last-child) {
+        margin-bottom: 0px;
+    }
+
+
+    /* FOOTER --------------------------------------------------------------- FOOTER */
+    footer {
+        justify-content: space-between;
+    }
+    /* Content */
+    /* Left Side */
+    footer > div:first-child {
+        padding: 48px 24px 0px 48px;
+    }
+    footer > div:first-child > h6 {
+        margin-bottom: 0px;
+        margin-right: 48px;
+        padding-top: 0px;
+    }
+    footer > div:first-child p {
+        font-size: 9pt;
+    }
+    footer > div:first-child p:not(:last-child) {
+        margin-bottom: 9px;
+    }
 }
 /* Large */
 @media only screen and (min-width: 1200px) {
-    
+    /* HEADER --------------------------------------------------------------- HEADER */
+    header > div.hero > .copy {
+        font-size: 33pt;
+    }
+
+
+    /* NAVIGATION ------------------------------------------------------- NAVIGATION */
+    /* Navigation Links */
+    nav > ul > li.button {
+        font-size: 15pt;
+    }
+    nav > ul > li.button:not(:last-child) > a {
+        padding-top: 3px;
+    }
+
+
+    /* CONTACT ASIDE ------------------------------------------------- CONTACT ASIDE */
+    aside {
+        width: calc(33vw - 48px);
+    }
+    aside.active {
+        left: calc(67vw + 48px);
+    }
+
+
+    /* FOOTER --------------------------------------------------------------- FOOTER */
+    footer {
+        justify-content: flex-start;
+    }
+    /* Content */
+    /* Left Side */
+    footer > div:first-child {
+        margin-right: 48px;
+        padding: 48px 0px 0px 48px;
+    }
+    /* Right Side */
+    footer > div:last-child {
+        padding: 48px 48px 0px 0px;
+    }
+    footer > div:last-child > .pill.button {
+        left: auto;
+        margin-right: 48px;
+        position: relative;
+        top: auto;
+        transform: none;
+    }
+}
+
+/* ACCESSIBILITY ----------------------------------------------------- ACCESSIBILITY */
+/* Reduced Motion */
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }

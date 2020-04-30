@@ -1,31 +1,22 @@
 (function() {
     const nav = document.getElementById('nav');
     const contact = document.getElementById('contact');
-    const openNav = document.getElementById('nav-open');
-    const navLinks = document.getElementsByClassName('nav-link');
-    const openContacts = document.getElementsByClassName('contact-open');
-    const closeNav = document.getElementById('nav-close');
-    const closeContact = document.getElementById('contact-close');
+    const openContactIds = ['nav-contact', 'main-contact', 'footer-contact'];
 
-    openNav.addEventListener('click', e => {
-        e.preventDefault();
-        nav.classList.add('active');
+    function close(aside) {
+        aside.classList.remove('active');
+    }
+    function open(aside) {
+        aside.classList.add('active');
+    }
+
+    window.addEventListener('click', e => {
+        const id = e.target.id;
+        if (id === 'open-nav') open(nav);
+        if (id === 'close-nav') close(nav);
+        if (openContactIds.includes(id)) open(contact);
+        if (id == 'close-contact') close(contact);
+        if (e.target.matches('.nav-link')) close(nav);
     });
-    closeNav.addEventListener('click', e => {
-        e.preventDefault();
-        nav.classList.remove('active');
-    });
-    for (link of navLinks)
-        link.addEventListener('click', e => {
-            nav.classList.remove('active');
-        });
-    for (button of openContacts)
-        button.addEventListener('click', e => {
-            e.preventDefault();
-            contact.classList.add('active');
-        });
-    closeContact.addEventListener('click', e => {
-        e.preventDefault();
-        contact.classList.remove('active');
-    });
+    document.getElementById('year').innerHTML = new Date(Date.now()).getFullYear().toString();
 }());
