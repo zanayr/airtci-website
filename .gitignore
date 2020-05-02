@@ -1,6 +1,6 @@
 # DIRECTORIES
-/resources
-/misc
+/resources/
+/misc/
 
 # MISC
 .DS_Store

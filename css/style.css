@@ -4,6 +4,7 @@
 
 
 /* FONTS --------------------------------------------------------------------- FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap');
 @font-face {
     font-family: 'Gilbert Webdings';
     src: url('../resources/fonts/Gilbert_Webdings.woff2') format('woff2'),
@@ -11,7 +12,6 @@
     font-weight: normal;
     font-style: normal;
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap');
 
 
 /* VARIABLES ------------------------------------------------------------- VARIABLES */
@@ -58,7 +58,7 @@ input, select, option, button, textarea {
 /* GLOBAL ------------------------------------------------------------------- GLOBAL */
 /* Layout */
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 body {
     overflow-x: hidden;
@@ -263,6 +263,7 @@ header > div.navigation {
 /* Open Navigation Button */
 header > div.navigation > .icon.button {
     transform: translateX(12px);
+    z-index: 97;
 }
 /* Navigation Aside */
 nav {
@@ -760,8 +761,8 @@ footer > div:last-child > ul > li:not(:last-child) {
 
 /* ACCESSIBILITY ----------------------------------------------------- ACCESSIBILITY */
 /* Reduced Motion */
-@media screen and (prefers-reduced-motion: reduce) {
+/* @media screen and (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
 	}
-}
+} */
