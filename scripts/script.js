@@ -1,12 +1,5 @@
 (function() {
-    const nav = document.getElementById('nav');
-    const contact = document.getElementById('contact');
-    const openContactIds = ['nav-contact', 'main-contact', 'footer-contact'];
-    const enabled = false; //'scrollBehavior' in document.documentElement.style;
-    let step;
-    let target;
-    let direction;
-    
+    // Open and close functions to open and close passed HTML aside elements
     function close(aside) {
         if (aside.id === 'contact') document.body.classList.remove('lock');
         aside.classList.remove('active');
@@ -15,39 +8,28 @@
         if (aside.id === 'contact') document.body.classList.add('lock');
         aside.classList.add('active');
     }
-    function scroll() {
-        if (direction == 1) {
-            if (window.pageYOffset >= target || window.pageYOffset + window.innerHeight >= document.body.clientHeight - 1) {
-                window.scrollTo(0, target);
-            } else {
-                window.scrollTo(0, window.pageYOffset + (step * direction));
-                requestAnimationFrame(scroll);
+
+    // Event delegation
+    document.addEventListener('click', event => {
+        if (event.target.classList.contains('nav-link')) return;
+        event.preventDefault();
+        if (event.target.id == 'open-nav') return open(document.getElementById('nav'));
+        if (event.target.id == 'close-nav') return close(document.getElementById('nav'));
+        if (event.target.classList.contains('contact-link')) return open(document.getElementById('contact'));
+        if (event.target.id == 'close-contact') return close(document.getElementById('contact'));
+    });
+    window.addEventListener('load', () => {
+        document.getElementById('year').innerHTML = new Date(Date.now()).getFullYear().toString();
+        setTimeout(() => {
+            // Unobscure the phone and email links to protect against website scrapers
+            const emailLinks = document.getElementsByClassName('email-link');
+            const phoneLink = document.getElementById('phone');
+            for (link of emailLinks) {
+                link.innerHTML = `${(29234652).toString(36)}@airtci.com`;
+                link.href = `mailto:${(29234652).toString(36)}@airtci.com`;
             }
-        } else if (direction == -1) {
-            if (window.pageYOffset <= target || window.pageYOffset + window.innerHeight >= document.body.clientHeight - 1) {
-                window.scrollTo(0, target);
-            } else {
-                window.scrollTo(0, window.pageYOffset + (step * direction));
-                requestAnimationFrame(scroll);
-            }
-        }
-    }
-    function polyfill(id) {
-        target = document.getElementById(id).getBoundingClientRect().top + window.pageYOffset;
-        if (!isFinite(target) || target == 0) return;
-        step = target / 30;
-        direction = target > window.pageYOffset ? 1 : -1;
-        requestAnimationFrame(scroll);
-    }
-    document.addEventListener('click', (e) => {
-        const id = e.target.id;
-        if (id === 'open-nav') open(nav);
-        if (id === 'close-nav') close(nav);
-        if (openContactIds.includes(id)) open(contact);
-        if (id == 'close-contact') close(contact);
-        // if (enabled && e.target.matches('.nav-link')) close(nav);
-        e.preventDefault();
-        if (!enabled && e.target.matches('.nav-link')) polyfill(e.target.dataset.target);
-    })
-    document.getElementById('year').innerHTML = new Date(Date.now()).getFullYear().toString();
+            phoneLink.innerHTML = `+1 602 ${parseInt("33a", 16)} 0170`;
+            phoneLink.href = `tel:1602${parseInt("33a", 16)}0170`;
+        }, 250);
+    }) 
 }());
