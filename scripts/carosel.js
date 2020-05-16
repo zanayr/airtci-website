@@ -1,8 +1,8 @@
 (function () {
     const slides = document.getElementsByClassName('slide');
     const count = slides.length;
-    const delay = 1000;
-    const duration = 3000;
+    const delay = 2000;
+    const duration = 4000;
     let current = 0;
     let last = null;
     let interval = null;

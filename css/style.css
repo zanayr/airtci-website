@@ -25,7 +25,7 @@ html:root {
     --gray-40:      #c3c3c4;
     --gray-20:      #dfe3e8;
     --white:        #f8f8f8;
-    --dur-lg:       1.00s;
+    --dur-lg:       2.00s;
     --dur-md:       0.66s;
     --dur-sh:       0.33s;
     --easing:       ease;
@@ -58,7 +58,7 @@ input, select, option, button, textarea {
 /* GLOBAL ------------------------------------------------------------------- GLOBAL */
 /* Layout */
 html {
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
 body {
     overflow-x: hidden;
