@@ -223,8 +223,8 @@ header > div.hero {
     justify-content: space-between;
     padding: 48px;
 }
-header > div.hero > h1 {
-    font-size: 33pt;
+header > div.hero > img.logo {
+    height: auto;
     width: calc(50% - 12px);
     z-index: 2;
 }
@@ -240,6 +240,7 @@ header > div.hero > .span.button {
     top: calc(100% - 80px);
     z-index: 2;
 }
+
 
 
 /* CAROSEL ----------------------------------------------------------------- CAROSEL */
@@ -259,6 +260,10 @@ header > div.navigation {
     height: 144px;
     justify-content: space-between;
     padding: 48px;
+}
+header > div.navigation > img.logo {
+    height: auto;
+    width: 80px;
 }
 /* Open Navigation Button */
 header > div.navigation > .icon.button {
@@ -453,8 +458,9 @@ footer {
 footer > div:first-child {
     padding: 48px 48px 72px 48px;
 }
-footer > div:first-child > h6 {
-    font-size: 11pt;
+footer > div:first-child > img.logo {
+    height: auto;
+    width: 50px;
     margin-bottom: 6px;
 }
 footer > div:first-child p {
@@ -526,8 +532,9 @@ footer > div:last-child > ul > li:not(:last-child) {
 
 
     /* HEADER --------------------------------------------------------------- HEADER */
-    header > div.hero > h1 {
-        width: calc(50% - 24px);
+    header > div.hero > img.logo {
+        max-width: 224px;
+        width: 33%;
     }
     header > div.hero > .copy {
         font-size: 23pt;
@@ -535,6 +542,7 @@ footer > div:last-child > ul > li:not(:last-child) {
         padding: 48px;
         width: calc(50% - 24px);
     }
+    
 
 
     /* NAVIGATION ------------------------------------------------------- NAVIGATION */
@@ -543,6 +551,7 @@ footer > div:last-child > ul > li:not(:last-child) {
         display: none;
         visibility: hidden;
     }
+    
     /* Navigation Aside */
     nav {
         height: auto;
@@ -625,10 +634,10 @@ footer > div:last-child > ul > li:not(:last-child) {
     footer > div:first-child {
         padding: 48px 24px 0px 48px;
     }
-    footer > div:first-child > h6 {
-        font-size: 13pt;
+    footer > div:first-child > img.logo {
+        height: 16px;
         margin-bottom: 20px;
-        padding-top: 4px;
+        margin-right: 8px;
     }
     footer > div:first-child p:not(:last-child) {
         margin-bottom: 0px;
