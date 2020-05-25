@@ -4,7 +4,7 @@
 
 
 /* FONTS --------------------------------------------------------------------- FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,600&display=swap');
 @font-face {
     font-family: 'Gilbert Webdings';
     src: url('../resources/fonts/Gilbert_Webdings.woff2') format('woff2'),
@@ -35,7 +35,7 @@ html:root {
 /* RESET --------------------------------------------------------------------- RESET */
 html, body, div, header, main, footer,
 nav, aside, section, article, span, ul,
-li, h1, h2, h3, h4, h5, h6, p, a, small,
+li, h1, h2, h3, h4, h5, h6, p, a, small, i,
 input, select, option, button, textarea {
     box-sizing: border-box;
     margin: 0px;
@@ -196,7 +196,7 @@ html, body {
     font-weight: normal;
 }
 /* Inline */
-h1, h2, h3, h4, h5, h6, p, small,
+h1, h2, h3, h4, h5, h6, p, small, i,
 a, a:hover, a:active, a:visited {
     background-color: inherit;
     color: inherit;
@@ -230,6 +230,8 @@ header > div.hero > img.logo {
 }
 header > div.hero > .copy {
     font-size: 9pt;
+    font-style: italic;
+    font-weight: 600;
     padding: 24px;
     width: calc(50% - 12px);
     z-index: 2;
