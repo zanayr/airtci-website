@@ -25,10 +25,6 @@ html:root {
     --gray-40:      #c3c3c4;
     --gray-20:      #dfe3e8;
     --white:        #f8f8f8;
-    --dur-lg:       2.00s;
-    --dur-md:       0.66s;
-    --dur-sh:       0.33s;
-    --easing:       ease;
 }
 
 
@@ -218,22 +214,30 @@ header {
 }
 /* Hero */
 header > div.hero {
-    align-items: center;
+    /* align-items: center; */
     height: 100vh;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 48px;
 }
 header > div.hero > img.logo {
     height: auto;
-    width: calc(50% - 12px);
+    /* width: calc(50% - 12px); */
+    left: 50%;
+    position: absolute;
+    right: 48px;
+    transform: translateX(-50%);
+    width: 50%;
     z-index: 2;
 }
 header > div.hero > .copy {
-    font-size: 9pt;
+    bottom: 120px; /* not 48px, because of the jump button */
+    font-size: 11pt;
     font-style: italic;
     font-weight: 600;
     padding: 24px;
-    width: calc(50% - 12px);
+    position: absolute;
+    right: 48px;
+    width: calc(100% - 96px);
     z-index: 2;
 }
 /* Jump Button */
@@ -248,7 +252,7 @@ header > div.hero > .span.button {
 /* CAROSEL ----------------------------------------------------------------- CAROSEL */
 img.slide {
     opacity: 0.0;
-    transition: opacity var(--easing) var(--dur-lg);
+    transition: opacity ease 2.00s;
 }
 img.slide.active {
     opacity: 1.0;
@@ -281,7 +285,7 @@ nav {
     padding: 48px;
     position: fixed;
     top: 0px;
-    transition: left var(--easing) var(--dur-sh);
+    transition: left ease 0.33s;
     width: calc(100vw - 48px);
     z-index: 98;
 }
@@ -316,7 +320,7 @@ aside {
     padding: 48px;
     position: fixed;
     top: 0px;
-    transition: left var(--easing) var(--dur-sh);
+    transition: left ease 0.33s;
     width: 100vw;
     z-index: 99;
 }
@@ -535,14 +539,16 @@ footer > div:last-child > ul > li:not(:last-child) {
 
     /* HEADER --------------------------------------------------------------- HEADER */
     header > div.hero > img.logo {
+        left: 48px;
         max-width: 224px;
+        transform: translateX(0%);
         width: 33%;
     }
     header > div.hero > .copy {
-        font-size: 23pt;
+        font-size: 15pt;
         font-weight: 600;
         padding: 48px;
-        width: calc(50% - 24px);
+        width: calc(50% - 72px);
     }
     
 
@@ -724,7 +730,7 @@ footer > div:last-child > ul > li:not(:last-child) {
 @media only screen and (min-width: 1200px) {
     /* HEADER --------------------------------------------------------------- HEADER */
     header > div.hero > .copy {
-        font-size: 33pt;
+        font-size: 23pt;
     }
 
 
