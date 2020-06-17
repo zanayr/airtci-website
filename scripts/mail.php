@@ -26,7 +26,7 @@ if ($_POST["name"]) {
     $content .= "Best,\r\n";
     
     $captcha = $_POST["captcha"];
-    $secret = "6LcHvaUZAAAAAM2sGA9fTh3u5HrCqbSUA7hUnjuA";
+    $secret = "";
     $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
     
     if($response.success == true) {
