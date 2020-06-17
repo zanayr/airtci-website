@@ -32,7 +32,7 @@
         </header>
         <aside id="contact" class="bg-black fg-white">
             <p id="close-contact" class="icon button webding absolute bg-black fg-white">c</p>
-            <form class="column center">
+            <form id="form" class="column center" name="contact">
                 <h2 class="absolute roboto">Reach Out</h2>
                 <div class="column">
                     <div class="field">
@@ -65,14 +65,15 @@
                         <label class="absolute">Name</label>
                     </div>
                 </div>
-                <button class="pill button absolute bg-black bd-white fg-white" type="submit">Submit</button>
+                <input id ="captcha" name="captcha" type="hidden" value="">
+                <button id="submit" class="pill button absolute bg-black bd-white fg-white" name="g-recaptcha" type="button">Submit</button>
                 <a class="absolute email-link" href="#"></a>
             </form>
         </aside>
         <main>
             <section id="company" class="bg-white fg-black">
                 <article>
-                    <p class="copy"><i>airTCI</i> provides complete professional aviation
+                    <p class="copy">Air technical consulting international provides complete professional aviation
                         technical expertise and support for aircraft, engine
                         and components with a team of experienced consultants with
                         extensive backgrounds and experience in aircraft leasing,
@@ -100,10 +101,10 @@
                 <article class="bg-trans">
                     <h1 class="roboto">Services</h1>
                     <p class="copy"><i>airTCI</i> offers the many trusted, professional, and
-                        customer oriented services that are difficult procure in the
+                        customer oriented services that can be difficult procure in the
                         industry. Services we offer include, but are not limited to:
-                        program and project management, vender, lease purchase and sale
-                        contract, agreement review, mid-term lease audits and
+                        program and project management, records audits, vender, lease purchase and sale
+                        contract agreement review, mid-term lease audits and
                         physical inspections of engine, airframe, and shops.
                     </p>
                     <div class="dynamic-lg">
@@ -117,7 +118,7 @@
                         <ul class="roboto">
                             <li>Delivery and Return</li>
                             <li>Document Technical Review</li>
-                            <li>Pysical Inspections</li>
+                            <li>Physical Inspections</li>
                             <li>Pass-thru Flight Operations</li>
                             <li>Records management and audits</li>
                         </ul>
@@ -133,7 +134,7 @@
                     <p class="copy"><i>airTCI</i> has a global presence, leaving many
                         satisfied customers on every corner of the globe. Departing to
                         where our services are needed, and not leaving until the job is
-                        finsihed!
+                        finshied!
                     </p>
                     <div class="row">
                         <div class="dynamic-lg">
@@ -165,7 +166,7 @@
             <div class="dynamic-lg">
                 <img class="logo" src="./resources/svg/AirTCI_Footer_Logo.svg">
                 <div>
-                    <p>&copy;<span id="year"></span>airTCI | All rights reserved</p>
+                    <p>&copy;<span id="year"></span> airTCI | All rights reserved</p>
                     <p>All photography used has free to use licensing</p>
                     <p>Website by <a href="https://www.ryanfickenscher.com">Ryan Fickenscher</a></p>
                 </div>
@@ -180,11 +181,12 @@
                 <ul>
                     <!-- add address here -->
                     <li><a class="email-link" href="#"></a></li>
-                    <li><a id="phone" href="#"></a></li>
+                    <!-- add phone number here -->
                 </ul>
             </div>
         </footer>
-        <script type="text/javascript" src="./scripts/script.js"></script>
-        <script type="text/javascript" src="./scripts/carosel.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcHvaUZAAAAAMUFMcYoyZJ1I9Tmx5RITPfRgDNb"></script>
+        <script src="./scripts/script.js"></script>
+        <script src="./scripts/carosel.js"></script>
     </body>
 </html>
