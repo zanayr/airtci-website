@@ -123,11 +123,10 @@ button {
 
 /* MISC. --------------------------------------------------------------------- MISC. */
 div.overlay {
-    background-color: var(--black);
+    background-color: #000000;
     height: 100%;
     left: 0px;
-    mix-blend-mode: multiply;
-    opacity: 0.66;
+    opacity: 0.33;
     position: absolute;
     top: 0px;
     width: 100%;
@@ -431,7 +430,7 @@ section > article > .pill.button {
     font-size: 11pt;
 }
 section ul > li {
-    font-size: 17pt;
+    font-size: 13pt;
     text-transform: uppercase;
 }
 section ul:not(:last-child),
