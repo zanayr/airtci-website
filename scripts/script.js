@@ -48,8 +48,8 @@
             // Unobscure the email links to protect against website scrapers
             const emailLinks = document.getElementsByClassName('email-link');
             for (link of emailLinks) {
-                link.innerHTML = `${(29234652).toString(36)}@airtci.com`;
-                link.href = `mailto:${(29234652).toString(36)}@airtci.com`;
+                link.innerHTML = `${(1757772843832).toString(36)}@airtci.com`;
+                link.href = `mailto:${(1757772843832).toString(36)}@airtci.com`;
             }
         }, 250);
     });
