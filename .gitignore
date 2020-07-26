@@ -4,6 +4,3 @@
 
 # MISC
 .DS_Store
-
-# Hide Server Script
-/scripts/mail.php
